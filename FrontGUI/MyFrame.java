@@ -10,19 +10,26 @@ import java.awt.*;
  */
 public class MyFrame extends JFrame
 {
+    private JTextArea logTA;
+    
     public MyFrame(){
         this.setTitle("과제#2");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         this.setSize(1000,500);
         this.setLayout(new GridLayout(1,3));
         
-        WestPanel westP = new WestPanel();
-        CenterPanel centerP = new CenterPanel();
-        EastPanel eastP = new EastPanel();
+        logTA = new JTextArea("[출력화면]\n");
+        logTA.setEditable(false);
+        
+        JScrollPane logSP = new JScrollPane(logTA);
+        
+        WestPanel westP = new WestPanel(logTA);
+        CenterPanel centerP = new CenterPanel(logTA);
+        //EastPanel eastP = new EastPanel();
         
         this.add(westP);
         this.add(centerP);
-        this.add(eastP);
+        this.add(logSP);
         
         this.setVisible(true);
     }

@@ -16,7 +16,10 @@ public class EastPanel extends JPanel
         this.setLayout(new GridLayout(1,1));
         
         logTA = new JTextArea("[출력화면]\n");
+        logTA.setEditable(false);
         
-        this.add(logTA);
+        JScrollPane logSP = new JScrollPane(logTA);
+        
+        this.add(logSP);
     }
 }

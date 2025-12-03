@@ -10,16 +10,18 @@ import java.awt.*;
  */
 public class WestPanel extends JPanel
 {
-    private JTextField borrowerNameTF;
-    private JTextField borrowerEmailTF;
-    private JTextField borrowerUniqueNumberTF;
+    public JTextField borrowerNameTF;
+    public JTextField borrowerEmailTF;
+    public JTextField borrowerUniqueNumberTF;
+    public JButton borrowerBT;
     
-    private JTextField bookTitleTF;
-    private JTextField bookAuthorTF;
-    private JTextField bookUniqueNumberTF;
+    public JTextField bookTitleTF;
+    public JTextField bookAuthorTF;
+    public JTextField bookUniqueNumberTF;
+    public JButton bookBT;
     
-    public WestPanel(){
-        this.setLayout(new GridLayout(8,2,10,10));
+    public WestPanel(JTextArea logTA){
+        this.setLayout(new GridLayout(10,2,10,10));
         //this.setBackground(Color.GREEN);
         
         JLabel borrowersetTitleLB = new JLabel("이용자 등록");
@@ -30,15 +32,19 @@ public class WestPanel extends JPanel
         borrowerEmailTF = new JTextField(20);
         JLabel borrowerUniqueNumberLB = new JLabel("이용자 고유번호");
         borrowerUniqueNumberTF = new JTextField(20);
+        JLabel blank2 = new JLabel("");
+        borrowerBT = new JButton("이용자 등록하기");
         
         JLabel booksetTitleLB = new JLabel("책 등록");
-        JLabel blank2 = new JLabel("");
+        JLabel blank3 = new JLabel("");
         JLabel bookTitleLB = new JLabel("책 이름");
         bookTitleTF = new JTextField(20);
         JLabel bookAuthorLB = new JLabel("책 저자");
         bookAuthorTF = new JTextField(20);
         JLabel bookUniqueNumberLB = new JLabel("책 고유번호");
         bookUniqueNumberTF = new JTextField(20);
+        JLabel blank4 = new JLabel("");
+        bookBT = new JButton("책 등록하기");
         
         this.add(borrowersetTitleLB);
         this.add(blank1);
@@ -48,14 +54,21 @@ public class WestPanel extends JPanel
         this.add(borrowerEmailTF);
         this.add(borrowerUniqueNumberLB);
         this.add(borrowerUniqueNumberTF);
+        this.add(blank2);
+        this.add(borrowerBT);
         
         this.add(booksetTitleLB);
-        this.add(blank2);
+        this.add(blank3);
         this.add(bookTitleLB);
         this.add(bookTitleTF);
         this.add(bookAuthorLB);
         this.add(bookAuthorTF);
         this.add(bookUniqueNumberLB);
         this.add(bookUniqueNumberTF);
+        this.add(blank4);
+        this.add(bookBT);
+        
+        borrowerBT.addActionListener(new MainListener(logTA,this));
+        bookBT.addActionListener(new MainListener(logTA,this));
     }
 }

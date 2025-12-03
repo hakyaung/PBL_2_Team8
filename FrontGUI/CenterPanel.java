@@ -2,26 +2,29 @@ package FrontGUI;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.*;
 /**
  * CenterPanel 클래스의 설명을 작성하세요.
  *
  * @author (작성자 이름)
  * @version (버전 번호 또는 작성한 날짜)
  */
-public class CenterPanel extends JPanel
+public class CenterPanel extends JPanel implements ItemListener
 {
-    private JTextField loanBookTF;
-    private JTextField loanBorrowerTF;
-    private JTextField returnBookTF;
+    public JTextField loanBookTF;
+    public JTextField loanBorrowerTF;
+    public JTextField returnBookTF;
     
-    private JRadioButton loanRB;
-    private JRadioButton returnRB;
-    private JButton submitBT;
+    public JRadioButton loanRB;
+    public JRadioButton returnRB;
+    public JButton submitBT;
     
-    private JButton displayForLoanBT;
-    private JButton displayOnLoanBT;
+    public JButton displayForLoanBT;
+    public JButton displayOnLoanBT;
     
-    public CenterPanel(){
+    int radioState;
+    
+    public CenterPanel(JTextArea logTA){
         this.setLayout(new GridLayout(9,2,10,10));
         //this.setBackground(Color.CYAN);
         
@@ -29,7 +32,7 @@ public class CenterPanel extends JPanel
         JLabel blank1 = new JLabel("");
         JLabel loanBookLB = new JLabel("책 고유번호");
         loanBookTF = new JTextField(20);
-        JLabel loanBorrowerLB = new JLabel("이용자 고유번호");
+        JLabel loanBorrowerLB = new JLabel("이용자 이름");
         loanBorrowerTF = new JTextField(20);
         
         JLabel returnsetTitleLB = new JLabel("반납");
@@ -70,5 +73,27 @@ public class CenterPanel extends JPanel
         
         this.add(displayForLoanBT);
         this.add(displayOnLoanBT);
+        
+        displayForLoanBT.addActionListener(new MainListener(logTA));
+        displayOnLoanBT.addActionListener(new MainListener(logTA));
+        
+        loanRB.addItemListener(this);
+        returnRB.addItemListener(this);
+        
+        submitBT.addActionListener(new MainListener(logTA, this));
+    }
+    
+    public void itemStateChanged(ItemEvent e){
+        if(e.getStateChange() == ItemEvent.DESELECTED){
+            radioState = 0;
+            return; // 해제된 경우 그냥 리턴
+        }
+        if(loanRB.isSelected()){
+            radioState = 1;
+            //System.out.println("1");
+        }else if(returnRB.isSelected()){
+            radioState = 2;
+            //System.out.println("2");
+        }
     }
 }
