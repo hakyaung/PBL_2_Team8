@@ -4,9 +4,20 @@
 적어도 다음과 같은 내용이 포함되어야합니다.:
 ------------------------------------------------------------------------
 
-프로젝트 제목(PROJECT TITLE):
-프로젝트의 목적(PURPOSE OF PROJECT):
-버전 또는 작성일자(VERSION or DATE):
-이 프로젝트를 시작하는 방법(HOW TO START THIS PROJECT):
-제작자(AUTHORS):
-사용자 설명서(USER INSTRUCTIONS):
+프로젝트 제목(PROJECT TITLE): 도서관관리시스템
+프로젝트의 목적(PURPOSE OF PROJECT): 도서관 사서가 이용할 수 있는 도서관관리 시스템을 만드는 것이 목적
+버전 또는 작성일자(VERSION or DATE): 2025년 12월 4일
+이 프로젝트를 시작하는 방법(HOW TO START THIS PROJECT): MyApp 클래스의 void main(String[] args) 메소드 실행
+제작자(AUTHORS): 유준석, 김민겸, 정하경
+사용자 설명서(USER INSTRUCTIONS): 
+해당 폴더안에 있는 package라고 되어 있는 BlueJ 파일을 실행시킵니다.
+FrontGUI 패키지와 CoreEngine 패키지, MyApp 클래스가 화면에 보이면 MyApp 클래스를 우클릭 합니다.
+우클릭 시 나오는 void main(String[] args) 메소드를 실행시킵니다.
+
+프로그램 실행 시 좌측에는 이용자 등록, 책 등록에 관한 정보를 적을 수 있는 텍스트 필드가 있으며 각자 등록버튼이 있습니다.
+
+중앙에는 대출, 반납에 필요한 정보를 기입하는 텍스트 필드가 있으며 대출인지 반납인지 선택하는 라디오 버튼이 있습니다.
+대출 과 반납 중 작업에 맞는 버튼을 클릭 후 아래에 있는 실행하기 버튼을 누르면 대출이나 반납이 됩니다.
+또한 대출 가능한 책 Display와 대출 중인 책 Display 버튼이 있어 버튼만 누르면 확인이 가능합니다.
+
+우측에는 등록 완료와, 대출 완료, 반납 완료, 두 가지의 Display 등에 대한 결과값을 출력하게 되어 확인이 가능합니다.
