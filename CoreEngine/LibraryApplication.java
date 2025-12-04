@@ -108,16 +108,16 @@ public class LibraryApplication
             Iterator<Borrower> it = foundBorrower.iterator();
             while (it.hasNext()) {
                 Borrower borrowerInfo = it.next();
-                System.out.println("---");
-                System.out.println("이름: " + borrowerInfo.getName());
-                System.out.println("고유 번호: " + borrowerInfo.getborrowerUniqueNumber());
-                System.out.println("이메일 (주소): " + borrowerInfo.getEmail());
-                System.out.println("---");
+                // System.out.println("---");
+                // System.out.println("이름: " + borrowerInfo.getName());
+                // System.out.println("고유 번호: " + borrowerInfo.getborrowerUniqueNumber());
+                // System.out.println("이메일 (주소): " + borrowerInfo.getEmail());
+                // System.out.println("---");
                 
                 strSave += "---\n" + "이름 : " + borrowerInfo.getName() + " 고유번호 : " + borrowerInfo.getborrowerUniqueNumber() + " 이메일(주소): " + borrowerInfo.getEmail() + "---\n" ;
             }
         }
-        return "이용자 출력 완료";
+        return strSave;
     }
     
     public String startupFileRead(){

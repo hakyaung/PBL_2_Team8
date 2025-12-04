@@ -32,8 +32,9 @@ public class MyFrame extends JFrame
         //EastPanel eastP = new EastPanel();
         
         this.add(westP);
-        this.add(centerP);
         this.add(logSP);
+        this.add(centerP);
+        
         
         this.setVisible(true);
     }

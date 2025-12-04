@@ -82,6 +82,10 @@ public class MainListener implements ActionListener
         }else if(button.getText().equals("데이터 저장하기")){
             String str = la.saveFileWrite();
             logTA.append(str + "\n");
+        }else if(button.getText().equals("고유번호 찾기")){
+            String name = cpanel.getUniqueNumberTF.getText();
+            String str = la.getUniqueNumber(name);
+            logTA.append(str + "\n");
         }
     }
 }

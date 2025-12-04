@@ -28,24 +28,24 @@ public class WestPanel extends JPanel
         //this.setBackground(Color.GREEN);
         this.la = la;
         
-        JLabel borrowersetTitleLB = new JLabel("이용자 등록");
+        JLabel borrowersetTitleLB = new JLabel("                  이용자 등록");
         JLabel blank1 = new JLabel("");
-        JLabel borrowerNameLB = new JLabel("이용자 이름");
+        JLabel borrowerNameLB = new JLabel("                  이용자 이름");
         borrowerNameTF = new JTextField(20);
-        JLabel borrowerEmailLB = new JLabel("이용자 이메일");
+        JLabel borrowerEmailLB = new JLabel("                  이용자 이메일");
         borrowerEmailTF = new JTextField(20);
-        JLabel borrowerUniqueNumberLB = new JLabel("이용자 고유번호");
+        JLabel borrowerUniqueNumberLB = new JLabel("                  이용자 고유번호");
         borrowerUniqueNumberTF = new JTextField(20);
         JLabel blank2 = new JLabel("");
         borrowerBT = new JButton("이용자 등록하기");
         
-        JLabel booksetTitleLB = new JLabel("책 등록");
+        JLabel booksetTitleLB = new JLabel("                  책 등록");
         JLabel blank3 = new JLabel("");
-        JLabel bookTitleLB = new JLabel("책 이름");
+        JLabel bookTitleLB = new JLabel("                  책 이름");
         bookTitleTF = new JTextField(20);
-        JLabel bookAuthorLB = new JLabel("책 저자");
+        JLabel bookAuthorLB = new JLabel("                  책 저자");
         bookAuthorTF = new JTextField(20);
-        JLabel bookUniqueNumberLB = new JLabel("책 고유번호");
+        JLabel bookUniqueNumberLB = new JLabel("                  책 고유번호");
         bookUniqueNumberTF = new JTextField(20);
         JLabel blank4 = new JLabel("");
         bookBT = new JButton("책 등록하기");

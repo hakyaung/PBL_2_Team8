@@ -15,6 +15,7 @@ public class CenterPanel extends JPanel implements ItemListener
     public JTextField loanBookTF;
     public JTextField loanBorrowerTF;
     public JTextField returnBookTF;
+    public JTextField getUniqueNumberTF;
     
     public JRadioButton loanRB;
     public JRadioButton returnRB;
@@ -26,12 +27,14 @@ public class CenterPanel extends JPanel implements ItemListener
     public JButton startupFileReadBT;
     public JButton saveFileWriteBT;
     
+    public JButton getUniqueNumberBT;
+    
     int radioState;
     
     LibraryApplication la;
     
     public CenterPanel(JTextArea logTA, LibraryApplication la){
-        this.setLayout(new GridLayout(10,2,10,10));
+        this.setLayout(new GridLayout(12,2,10,10));
         //this.setBackground(Color.CYAN);
         
         this.la = la;
@@ -65,6 +68,10 @@ public class CenterPanel extends JPanel implements ItemListener
         startupFileReadBT = new JButton("데이터 불러오기");
         saveFileWriteBT = new JButton("데이터 저장하기");
         
+        JLabel getUniqueNumberLB = new JLabel("이름 입력");
+        getUniqueNumberTF = new JTextField(20);
+        getUniqueNumberBT = new JButton("고유번호 찾기");
+        
         this.add(loansetTitleLB);
         this.add(blank1);
         this.add(loanBookLB);
@@ -88,6 +95,11 @@ public class CenterPanel extends JPanel implements ItemListener
         this.add(startupFileReadBT);
         this.add(saveFileWriteBT);
         
+        this.add(getUniqueNumberLB);  
+        this.add(getUniqueNumberTF);
+        this.add(new JLabel(""));  
+        this.add(getUniqueNumberBT); 
+        
         displayForLoanBT.addActionListener(new MainListener(logTA, la));
         displayOnLoanBT.addActionListener(new MainListener(logTA, la));
         
@@ -98,6 +110,7 @@ public class CenterPanel extends JPanel implements ItemListener
         
         startupFileReadBT.addActionListener(new MainListener(logTA, this, la));
         saveFileWriteBT.addActionListener(new MainListener(logTA, this, la));
+        getUniqueNumberBT.addActionListener(new MainListener(logTA, this, la));
     }
     
     public void itemStateChanged(ItemEvent e){
