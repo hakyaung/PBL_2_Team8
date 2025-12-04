@@ -28,12 +28,14 @@ public class MyFrame extends JFrame
         JScrollPane logSP = new JScrollPane(logTA);
         
         WestPanel westP = new WestPanel(logTA, la);
-        CenterPanel centerP = new CenterPanel(logTA, la);
+        EastPanel eastP = new EastPanel(logTA, la);
         //EastPanel eastP = new EastPanel();
         
         this.add(westP);
         this.add(logSP);
-        this.add(centerP);
+        this.add(eastP);
+        
+        
         
         
         this.setVisible(true);

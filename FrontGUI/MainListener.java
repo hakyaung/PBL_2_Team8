@@ -16,7 +16,7 @@ public class MainListener implements ActionListener
     LibraryApplication la;
     JTextArea logTA;
     WestPanel wpanel;
-    CenterPanel cpanel;
+    EastPanel epanel;
     
     public MainListener(JTextArea logTA, LibraryApplication la){
         this.logTA = logTA;
@@ -29,9 +29,9 @@ public class MainListener implements ActionListener
         this.la = la;
     }
     
-    public MainListener(JTextArea logTA, CenterPanel cpanel, LibraryApplication la){
+    public MainListener(JTextArea logTA, EastPanel epanel, LibraryApplication la){
         this.logTA = logTA;
-        this.cpanel = cpanel;
+        this.epanel = epanel;
         this.la = la;
     }
     
@@ -63,18 +63,18 @@ public class MainListener implements ActionListener
             wpanel.bookAuthorTF.setText("");
             wpanel.bookUniqueNumberTF.setText("");
         }else if(button.getText().equals("실행하기")){
-            if(cpanel.radioState == 1){
-                String bookUniqueNumber = cpanel.loanBookTF.getText();
-                String borrowerUniqueNumber = cpanel.loanBorrowerTF.getText();
+            if(epanel.radioState == 1){
+                String bookUniqueNumber = epanel.loanBookTF.getText();
+                String borrowerUniqueNumber = epanel.loanBorrowerTF.getText();
                 String str = la.loanOneBook(bookUniqueNumber, borrowerUniqueNumber);
                 logTA.append(str + "\n");
-                cpanel.loanBookTF.setText("");
-                cpanel.loanBorrowerTF.setText("");
-            }else if(cpanel.radioState == 2){
-                String bookUniqueNumber = cpanel.returnBookTF.getText();
+                epanel.loanBookTF.setText("");
+                epanel.loanBorrowerTF.setText("");
+            }else if(epanel.radioState == 2){
+                String bookUniqueNumber = epanel.returnBookTF.getText();
                 String str = la.returnOneBook(bookUniqueNumber);
                 logTA.append(str + "\n");
-                cpanel.returnBookTF.setText("");
+                epanel.returnBookTF.setText("");
             }
         }else if(button.getText().equals("데이터 불러오기")){
             String str = la.startupFileRead();
@@ -83,7 +83,7 @@ public class MainListener implements ActionListener
             String str = la.saveFileWrite();
             logTA.append(str + "\n");
         }else if(button.getText().equals("고유번호 찾기")){
-            String name = cpanel.getUniqueNumberTF.getText();
+            String name = epanel.getUniqueNumberTF.getText();
             String str = la.getUniqueNumber(name);
             logTA.append(str + "\n");
         }
