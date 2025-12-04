@@ -1,5 +1,6 @@
 package FrontGUI;
 
+import CoreEngine.*;
 import javax.swing.*;
 import java.awt.*;
 /**
@@ -20,9 +21,12 @@ public class WestPanel extends JPanel
     public JTextField bookUniqueNumberTF;
     public JButton bookBT;
     
-    public WestPanel(JTextArea logTA){
+    LibraryApplication la;
+    
+    public WestPanel(JTextArea logTA, LibraryApplication la){
         this.setLayout(new GridLayout(10,2,10,10));
         //this.setBackground(Color.GREEN);
+        this.la = la;
         
         JLabel borrowersetTitleLB = new JLabel("이용자 등록");
         JLabel blank1 = new JLabel("");
@@ -68,7 +72,7 @@ public class WestPanel extends JPanel
         this.add(blank4);
         this.add(bookBT);
         
-        borrowerBT.addActionListener(new MainListener(logTA,this));
-        bookBT.addActionListener(new MainListener(logTA,this));
+        borrowerBT.addActionListener(new MainListener(logTA,this, la));
+        bookBT.addActionListener(new MainListener(logTA,this, la));
     }
 }
