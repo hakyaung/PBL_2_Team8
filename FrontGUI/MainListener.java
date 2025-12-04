@@ -1,5 +1,6 @@
 package FrontGUI;
 
+
 import CoreEngine.*;
 import javax.swing.*;
 import java.awt.*;
@@ -12,37 +13,42 @@ import java.awt.event.*;
  */
 public class MainListener implements ActionListener
 {
-    LibraryApplication la = new LibraryApplication("도서관 관리 시스템");
+    LibraryApplication la;
     JTextArea logTA;
     WestPanel wpanel;
     CenterPanel cpanel;
     
-    public MainListener(JTextArea logTA){
+    public MainListener(JTextArea logTA, LibraryApplication la){
         this.logTA = logTA;
+        this.la = la;
     }
     
-    public MainListener(JTextArea logTA, WestPanel wpanel){
+    public MainListener(JTextArea logTA, WestPanel wpanel, LibraryApplication la){
         this.logTA = logTA;
         this.wpanel = wpanel;
+        this.la = la;
     }
     
-    public MainListener(JTextArea logTA, CenterPanel cpanel){
+    public MainListener(JTextArea logTA, CenterPanel cpanel, LibraryApplication la){
         this.logTA = logTA;
         this.cpanel = cpanel;
+        this.la = la;
     }
     
     public void actionPerformed(ActionEvent e){
         JButton button = (JButton)e.getSource();
         
         if(button.getText().equals("대출 가능한 책 Display")){
-            String str = la.displayBookForLoan();
+            String str = la.displayBooksForLoan();
             logTA.append(str + "\n");
         }else if(button.getText().equals("대출 중인 책 Display")){
-            String str = la.displayBookOnLoan();
+            String str = la.displayBooksOnLoan();
             logTA.append(str + "\n");
         }else if(button.getText().equals("이용자 등록하기")){
             String name = wpanel.borrowerNameTF.getText();
-            String str = la.registerOneBorrower(name);
+            String uniqueNumber = wpanel.borrowerUniqueNumberTF.getText();
+            String email = wpanel.borrowerEmailTF.getText();
+            String str = la.registerBorrower(name, uniqueNumber, email);
             logTA.append(str + "\n");
             wpanel.borrowerNameTF.setText("");
             wpanel.borrowerEmailTF.setText("");
@@ -59,8 +65,8 @@ public class MainListener implements ActionListener
         }else if(button.getText().equals("실행하기")){
             if(cpanel.radioState == 1){
                 String bookUniqueNumber = cpanel.loanBookTF.getText();
-                String borrowerName = cpanel.loanBorrowerTF.getText();
-                String str = la.loanOneBook(bookUniqueNumber, borrowerName);
+                String borrowerUniqueNumber = cpanel.loanBorrowerTF.getText();
+                String str = la.loanOneBook(bookUniqueNumber, borrowerUniqueNumber);
                 logTA.append(str + "\n");
                 cpanel.loanBookTF.setText("");
                 cpanel.loanBorrowerTF.setText("");
@@ -70,6 +76,12 @@ public class MainListener implements ActionListener
                 logTA.append(str + "\n");
                 cpanel.returnBookTF.setText("");
             }
+        }else if(button.getText().equals("데이터 불러오기")){
+            String str = la.startupFileRead();
+            logTA.append(str + "\n");
+        }else if(button.getText().equals("데이터 저장하기")){
+            String str = la.saveFileWrite();
+            logTA.append(str + "\n");
         }
     }
 }

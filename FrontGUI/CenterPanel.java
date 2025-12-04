@@ -1,5 +1,6 @@
 package FrontGUI;
 
+import CoreEngine.*;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
@@ -22,17 +23,24 @@ public class CenterPanel extends JPanel implements ItemListener
     public JButton displayForLoanBT;
     public JButton displayOnLoanBT;
     
+    public JButton startupFileReadBT;
+    public JButton saveFileWriteBT;
+    
     int radioState;
     
-    public CenterPanel(JTextArea logTA){
-        this.setLayout(new GridLayout(9,2,10,10));
+    LibraryApplication la;
+    
+    public CenterPanel(JTextArea logTA, LibraryApplication la){
+        this.setLayout(new GridLayout(10,2,10,10));
         //this.setBackground(Color.CYAN);
+        
+        this.la = la;
         
         JLabel loansetTitleLB = new JLabel("대출");
         JLabel blank1 = new JLabel("");
         JLabel loanBookLB = new JLabel("책 고유번호");
         loanBookTF = new JTextField(20);
-        JLabel loanBorrowerLB = new JLabel("이용자 이름");
+        JLabel loanBorrowerLB = new JLabel("이용자 고유번호");
         loanBorrowerTF = new JTextField(20);
         
         JLabel returnsetTitleLB = new JLabel("반납");
@@ -54,6 +62,9 @@ public class CenterPanel extends JPanel implements ItemListener
         displayForLoanBT = new JButton("대출 가능한 책 Display");
         displayOnLoanBT = new JButton("대출 중인 책 Display");
         
+        startupFileReadBT = new JButton("데이터 불러오기");
+        saveFileWriteBT = new JButton("데이터 저장하기");
+        
         this.add(loansetTitleLB);
         this.add(blank1);
         this.add(loanBookLB);
@@ -74,13 +85,19 @@ public class CenterPanel extends JPanel implements ItemListener
         this.add(displayForLoanBT);
         this.add(displayOnLoanBT);
         
-        displayForLoanBT.addActionListener(new MainListener(logTA));
-        displayOnLoanBT.addActionListener(new MainListener(logTA));
+        this.add(startupFileReadBT);
+        this.add(saveFileWriteBT);
+        
+        displayForLoanBT.addActionListener(new MainListener(logTA, la));
+        displayOnLoanBT.addActionListener(new MainListener(logTA, la));
         
         loanRB.addItemListener(this);
         returnRB.addItemListener(this);
         
-        submitBT.addActionListener(new MainListener(logTA, this));
+        submitBT.addActionListener(new MainListener(logTA, this, la));
+        
+        startupFileReadBT.addActionListener(new MainListener(logTA, this, la));
+        saveFileWriteBT.addActionListener(new MainListener(logTA, this, la));
     }
     
     public void itemStateChanged(ItemEvent e){
