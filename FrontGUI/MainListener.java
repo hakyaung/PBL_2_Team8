@@ -47,6 +47,8 @@ public class MainListener implements ActionListener
             wpanel.borrowerNameTF.setText("");
             wpanel.borrowerEmailTF.setText("");
             wpanel.borrowerUniqueNumberTF.setText("");
+            wpanel.borrowerBT.setText("이용자 등록 완료!");
+            new javax.swing.Timer(2000, evt -> wpanel.borrowerBT.setText("이용자 등록하기")).start();
         }else if(button.getText().equals("책 등록하기")){
             String title = wpanel.bookTitleTF.getText();
             String author = wpanel.bookAuthorTF.getText();
@@ -56,6 +58,8 @@ public class MainListener implements ActionListener
             wpanel.bookTitleTF.setText("");
             wpanel.bookAuthorTF.setText("");
             wpanel.bookUniqueNumberTF.setText("");
+            wpanel.bookBT.setText("책 등록 완료!");
+            new javax.swing.Timer(2000, evt -> wpanel.bookBT.setText("책 등록하기")).start();
         }else if(button.getText().equals("실행하기")){
             if(cpanel.radioState == 1){
                 String bookUniqueNumber = cpanel.loanBookTF.getText();

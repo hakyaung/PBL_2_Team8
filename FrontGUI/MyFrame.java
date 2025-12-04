@@ -18,7 +18,7 @@ public class MyFrame extends JFrame
         this.setSize(1000,500);
         this.setLayout(new GridLayout(1,3));
         
-        logTA = new JTextArea("[출력화면]\n");
+        logTA = new JTextArea("[출력 화면]\n");
         logTA.setEditable(false);
         
         JScrollPane logSP = new JScrollPane(logTA);
