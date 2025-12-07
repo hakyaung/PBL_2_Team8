@@ -68,8 +68,8 @@ public class LibraryApplication
         if (loanDB.checkBookOnLoan(book)) {
             return "오류: 책 " + book.gettitle() + "은 이미 대출 중입니다.";
         }
-        if (borrower.getloanCount() > 10) { 
-             return "오류: 이용자 " + borrower.getName() + "님은 대출 한도(10권)를 초과했습니다. (현재: " + borrower.getloanCount() + "권)";
+        if (borrower.getLoanCount() > 10) { 
+             return "오류: 이용자 " + borrower.getName() + "님은 대출 한도(10권)를 초과했습니다. (현재: " + borrower.getLoanCount() + "권)";
         }
         Loan loan = new Loan(borrower, book);
         loanDB.registerToLoan(loan);       
@@ -114,7 +114,7 @@ public class LibraryApplication
                 // System.out.println("이메일 (주소): " + borrowerInfo.getEmail());
                 // System.out.println("---");
                 
-                strSave += "---\n" + "이름 : " + borrowerInfo.getName() + " 고유번호 : " + borrowerInfo.getborrowerUniqueNumber() + " 이메일(주소): " + borrowerInfo.getEmail()+"\n \n";
+                strSave += "---\n" + "이름 : " + borrowerInfo.getName() + "\n고유번호 : " + borrowerInfo.getBorrowerUniqueNumber() + "\n이메일(주소): " + borrowerInfo.getEmail()+"\n \n";
             }
         }
         return strSave;

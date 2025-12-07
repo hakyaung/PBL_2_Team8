@@ -27,12 +27,14 @@ public class BookCollection
     }
     
     public Book getOneBook(int index) {
-        if(index < 0 || index >= uniqueNumberSet.size())
-        return null;
+        if(index < 0 || index >= uniqueNumberSet.size()){
+            return null;
+        }
         int i = 0;
         for(String key : uniqueNumberSet) {
-            if(i == index) 
-            return bookDB.get(key);
+            if(i == index){
+                return bookDB.get(key);
+            }
             i++;
         }
         return null;

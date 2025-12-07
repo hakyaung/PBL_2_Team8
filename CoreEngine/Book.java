@@ -37,6 +37,6 @@ public class Book
     }
     
     public String displayBook(){
-        return "책 이름 : " + title + " 저자 : " + author + " 책 고유번호 : " + bookuniqueNumber;
+        return "책 이름 : " + title + "\n저자 : " + author + "\n책 고유번호 : " + bookuniqueNumber + "\n";
     }
 }

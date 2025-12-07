@@ -24,8 +24,17 @@ public class BorrowerCollection
         // borrowerUniqueNumber 로 Borrower 객체가 있는지 검사하기
         Iterator<Borrower> it = borrowerDB.iterator();
         while(it.hasNext()){
-            String uniNum = it.next().getborrowerUniqueNumber();
+            String uniNum = it.next().getBorrowerUniqueNumber();
             if(borrowerUniqueNumber.equals(uniNum)){
+                return true;
+            }
+        }
+        return false;
+    }
+    
+    public boolean findBorrowerByName(String name) {
+        for (Borrower borrower : borrowerDB) {
+            if (borrower.getName().equals(name)) {
                 return true;
             }
         }
@@ -41,7 +50,7 @@ public class BorrowerCollection
         Iterator<Borrower> it = borrowerDB.iterator();
         while(it.hasNext()){
             Borrower br = it.next();
-            if(borrowerUniqueNumber.equals(br.getborrowerUniqueNumber())){
+            if(borrowerUniqueNumber.equals(br.getBorrowerUniqueNumber())){
                 return br;
             }
         }
@@ -50,15 +59,6 @@ public class BorrowerCollection
     
     public Borrower getOneBorrwer(int index){
         return borrowerDB.get(index);
-    }
-    
-    public boolean findBorrowerByName(String name) {
-        for (Borrower borrower : borrowerDB) {
-            if (borrower.getName().equals(name)) {
-                return true;
-            }
-        }
-        return false;
     }
     
     public ArrayList<Borrower> getUniqueNumber(String name) {

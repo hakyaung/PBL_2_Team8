@@ -15,28 +15,24 @@ public class MyFrame extends JFrame
     private JTextArea logTA;
     
     public MyFrame(){
-        this.setTitle("과제#2");
+        this.setTitle("도서관 관리 시스템 -8팀");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        this.setSize(1000,500);
+        this.setSize(1000,800);
         this.setLayout(new GridLayout(1,3));
         
         la = new LibraryApplication();
         
-        logTA = new JTextArea("[출력화면]\n");
+        logTA = new JTextArea("[출력화면]\n", 15, 10);
         logTA.setEditable(false);
         
         JScrollPane logSP = new JScrollPane(logTA);
         
         WestPanel westP = new WestPanel(logTA, la);
         EastPanel eastP = new EastPanel(logTA, la);
-        //EastPanel eastP = new EastPanel();
         
         this.add(westP);
         this.add(logSP);
         this.add(eastP);
-        
-        
-        
         
         this.setVisible(true);
     }

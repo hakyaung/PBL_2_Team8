@@ -33,25 +33,29 @@ public class Borrower
         return name;
     }
     
-    public String getborrowerUniqueNumber(){
+    public String getBorrowerUniqueNumber(){
         return borrowerUniqueNumber;
     }
     
     public String getEmail(){
         return email;
     }
-    public int getloanCount(){
+    
+    public int getLoanCount(){
         return loanCount;
     }
+    
     public void increaseLoanCount(){
         this.loanCount++;
     }
+    
     public void decreaseLoanCount(){
         if(this.loanCount > 0){
             this.loanCount--;
         }
     }
+    
     public String displayBorrower(){
-        return "이용자 이름 : " + name + " 이용자 고유번호 : " + borrowerUniqueNumber + " 이메일 주소 : " + email;
+        return "이용자 이름 : " + name + "\n이용자 고유번호 : " + borrowerUniqueNumber + "\n이메일 주소 : " + email + "\n";
     }
 }
