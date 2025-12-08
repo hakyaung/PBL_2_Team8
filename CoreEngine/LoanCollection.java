@@ -4,10 +4,7 @@ package CoreEngine;
 import java.util.*;
 /**
  * LoanCollection 클래스의 설명을 작성하세요.
- *
- * @author (김민겸, 유준석, 정하경)
- * @version (20251208)
- */
+ * 
 public class LoanCollection
 {
     private LinkedList<Loan> loanDB;
