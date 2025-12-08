@@ -6,7 +6,7 @@ import java.util.*;
  * LibraryApplication 클래스의 설명을 작성하세요.
  *
  * @author (유준석, 김민겸, 정하경)
- * @version (20251126)
+ * @version (20251208)
  */
 public class LibraryApplication
 {
