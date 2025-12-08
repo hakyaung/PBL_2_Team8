@@ -5,6 +5,9 @@ import java.util.*;
 /**
  * 책DB 클래스의 설명을 작성하세요.
  *
+ * @author (유준석, 김민겸, 정하경)
+ * @version (2025.12.08)
+ */
 public class BookCollection
 {
     private TreeSet<String> uniqueNumberSet;
