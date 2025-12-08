@@ -73,7 +73,7 @@ public class EastPanel extends JPanel implements ItemListener
         
         JLabel getUniqueNumberLB = new JLabel("고유번호 찾기");
         JLabel blank4 = new JLabel("");
-        getUniqueNumberTF = new JTextField(20);
+        getUniqueNumberTF = new JTextField("이용자 이름 입력",20);
         getUniqueNumberBT = new JButton("고유번호 찾기");
         
         this.add(loansetTitleLB);

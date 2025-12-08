@@ -86,7 +86,7 @@ public class MainListener implements ActionListener
             String name = epanel.getUniqueNumberTF.getText();
             String str = la.getUniqueNumber(name);
             logTA.append(str + "\n");
-            epanel.getUniqueNumberTF.setText("");
+            epanel.getUniqueNumberTF.setText("이용자 이름 입력");
         }
     }
 }

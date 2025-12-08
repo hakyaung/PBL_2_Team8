@@ -16,6 +16,9 @@ public class LibraryApplication
     SystemFileManager systemFileMg = new SystemFileManager(borrowerDB, bookDB, loanDB);
     
     public String registerOneBook(String title, String author, String bookUniqueNumber){
+        if (bookDB.findBook(bookUniqueNumber)) {
+            return "해당 책 고유번호 [" + bookUniqueNumber + "]는 이미 등록되어 있습니다.";
+        }
         // 책을 등록한다
         Book book = new Book(title, author, bookUniqueNumber);
         bookDB.registerToBookDB(book);
@@ -24,10 +27,13 @@ public class LibraryApplication
     }
     
     public String registerBorrower(String name, String borrowerUniqueNumber, String email){
+        // 이용자객체를 찾는다.
+        if(borrowerDB.findBorrower(borrowerUniqueNumber)){ 
+            return "오류: 이용자 고유번호 [" + borrowerUniqueNumber + "]는 이미 등록되어 있습니다.";
+        }
         // 이용자를 등록한다
         Borrower borrower = new Borrower(name, borrowerUniqueNumber, email);
         borrowerDB.registerToBorrowerDB(borrower);
-        
         return "이용자 " + borrower.displayBorrower() + " 등록이 완료되었습니다.";
     }
     
