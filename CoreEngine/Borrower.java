@@ -47,12 +47,14 @@ public class Borrower
     
     public void increaseLoanCount(){
         this.loanCount++;
+        System.out.println("남은 대출 권수 : " + this.loanCount);
     }
     
     public void decreaseLoanCount(){
         if(this.loanCount > 0){
             this.loanCount--;
         }
+        System.out.println("남은 대출 권수 : " + this.loanCount);
     }
     
     public String displayBorrower(){
