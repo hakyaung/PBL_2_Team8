@@ -105,13 +105,13 @@ public class LibraryApplication
     
     public String getUniqueNumber(String name) {
         // 이용자 고유번호 찾기
-        ArrayList<Borrower> foundBorrower = borrowerDB.getUniqueNumber(name);
+        ArrayList<Borrower> findBorrowerByName = borrowerDB.getUniqueNumber(name);
         String strSave = "";
 
-        if (foundBorrower.isEmpty()) {
+        if (findBorrowerByName.isEmpty()) {
             return "'" + name + "' 해당 이름의 정보가 없습니다.";
         } else {
-            Iterator<Borrower> it = foundBorrower.iterator();
+            Iterator<Borrower> it = findBorrowerByName.iterator();
             while (it.hasNext()) {
                 Borrower borrowerInfo = it.next();
                 // System.out.println("---");
