@@ -6,12 +6,6 @@ package CoreEngine;
  * Book 클래스의 설명을 작성하세요.
  *
  * @author (유준석, 김민겸, 정하경)
-<<<<<<< HEAD
- * @version (20251208)
-=======
- * @version (2025.12.08)
->>>>>>> ac7ecfae1d2de02fe9d6a838f2ed5040967e6c09
- */
 public class Book
 {
     private String title;
