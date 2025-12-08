@@ -3,7 +3,7 @@ package CoreEngine;
 
 
 /**
- * Loan 클래스의 설명을 작성하세요.
+ * Borrower와 Book 객체를 이어 새로운 Loan 객체를 생성하는 역할을 하게 됩니다.
  *
  * @author (유준석, 김민겸, 정하경)
  * @version (2025.12.08)

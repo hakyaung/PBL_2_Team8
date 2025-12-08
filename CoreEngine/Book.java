@@ -3,7 +3,7 @@ package CoreEngine;
 
 
 /**
- * Book 클래스의 설명을 작성하세요.
+ * Book 객체를 생성하는 클래스입니다.
  *
  * @author (유준석, 김민겸, 정하경)
  * @version (2025.12.08)
