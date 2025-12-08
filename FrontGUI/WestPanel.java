@@ -4,9 +4,9 @@ import CoreEngine.*;
 import javax.swing.*;
 import java.awt.*;
 /**
- * WestPanel 클래스의 설명을 작성하세요.
+ * WestPanel 클래스는 도서관리시스템 GUI의 왼쪽 패널을 구성하며 이용자 및 책등록 GUI를 구현한 클래스.
  *
- * @author (작성자 이름)
+ * @author (유준석, 김민겸, 정하경)
  * @version (2025.12.08)
  */
 public class WestPanel extends JPanel

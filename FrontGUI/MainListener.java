@@ -6,9 +6,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 /**
- * MyListener 클래스의 설명을 작성하세요.
+ * MainListener 클래스는 도서관리시스템 GUI에서 발생하는 
+ * 사용자 상호작용(액션 이벤트)을 처리하는 이벤트 리스너입니다.
  *
- * @author (작성자 이름)
+ * @author (유준석, 김민겸, 정하경)
  * @version (2025.12.08)
  */
 public class MainListener implements ActionListener

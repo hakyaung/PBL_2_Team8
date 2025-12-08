@@ -4,9 +4,9 @@ import CoreEngine.*;
 import javax.swing.*;
 import java.awt.*;
 /**
- * MyFrame 클래스의 설명을 작성하세요.
+ * MyFrame 클래스는 도서관리시스템의 모든 GUI를 부착한 최상위 클래스 입니다.
  *
- * @author (작성자 이름)
+ * @author (유준석, 김민겸, 정하경)
  * @version (2025.12.08)
  */
 public class MyFrame extends JFrame

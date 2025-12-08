@@ -5,9 +5,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 /**
- * CenterPanel 클래스의 설명을 작성하세요.
+ * EastPanel 클래스는 도서관리시스템의 GUI 중 오른쪽 패널을 구성하며 
+ * 대출,반납,Display과 데이터 불러오기및 관리,고유번호를 구현한 클래스.
  *
- * @author (작성자 이름)
+ * @author (유준석, 김민겸, 정하경)
  * @version (2025.12.08)
  */
 public class EastPanel extends JPanel implements ItemListener
